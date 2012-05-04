@@ -1,4 +1,4 @@
-Wed, 21 Mar 2012 15:07:28 UYT : cd /home/haldo/Documentos/Investigacion/IPOL/ipol_demo_fast/app/xxx_edge_detectors/src/ && cmake . && make
+Fri, 04 May 2012 10:53:33 UYT : cd /home/haldo/Escritorio/ipol_demo_edges/app/edges-ipol-demo/src/ && cmake . && make
 -- The C compiler identification is GNU
 -- The CXX compiler identification is GNU
 -- Check for working C compiler: /usr/bin/gcc
@@ -9,22 +9,42 @@ Wed, 21 Mar 2012 15:07:28 UYT : cd /home/haldo/Documentos/Investigacion/IPOL/ipo
 -- Check for working CXX compiler: /usr/bin/c++ -- works
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
+-- Found TIFF: /usr/lib/i386-linux-gnu/libtiff.so 
+-- Found JPEG: /usr/lib/i386-linux-gnu/libjpeg.so 
+-- Found ZLIB: /usr/lib/i386-linux-gnu/libz.so (found version "1.2.3.4")
+-- Found PNG: /usr/lib/i386-linux-gnu/libpng.so 
+libraries: /usr/lib/i386-linux-gnu/libtiff.so;/usr/lib/i386-linux-gnu/libjpeg.so;/usr/lib/i386-linux-gnu/libpng.so;/usr/lib/i386-linux-gnu/libz.so
+libs inside: /usr/lib/i386-linux-gnu/libtiff.so;/usr/lib/i386-linux-gnu/libjpeg.so;/usr/lib/i386-linux-gnu/libpng.so;/usr/lib/i386-linux-gnu/libz.so
+standard libraries: /usr/lib/i386-linux-gnu/libtiff.so;/usr/lib/i386-linux-gnu/libjpeg.so;/usr/lib/i386-linux-gnu/libpng.so;/usr/lib/i386-linux-gnu/libz.so
+custom libraries: 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/haldo/Documentos/Investigacion/IPOL/ipol_demo_fast/app/xxx_edge_detectors/src
+-- Build files have been written to: /home/haldo/Escritorio/ipol_demo_edges/app/edges-ipol-demo/src
+Scanning dependencies of target test_fded
+[ 14%] Building C object CMakeFiles/bin/test_fded.dir/src/test_fded.c.o
+Linking C executable bin/test_fded
+[ 14%] Built target bin/test_fded
+Scanning dependencies of target test_haralick
+[ 28%] Building C object CMakeFiles/bin/test_haralick.dir/src/test_haralick.c.o
+Linking C executable bin/test_haralick
+[ 28%] Built target bin/test_haralick
 Scanning dependencies of target test_mh
-[ 25%] Building C object CMakeFiles/bin/test_mh.dir/source/test_mh.c.o
+[ 42%] Building C object CMakeFiles/bin/test_mh.dir/src/test_mh.c.o
 Linking C executable bin/test_mh
-[ 25%] Built target bin/test_mh
+[ 42%] Built target bin/test_mh
+Scanning dependencies of target test_mh_log
+[ 57%] Building C object CMakeFiles/bin/test_mh_log.dir/src/test_mh_log.c.o
+Linking C executable bin/test_mh_log
+[ 57%] Built target bin/test_mh_log
 Scanning dependencies of target 2dconv
-[ 50%] Building C object source/CMakeFiles/2dconv.dir/2dconvolution.c.o
+[ 71%] Building C object src/CMakeFiles/2dconv.dir/2dconvolution.c.o
 Linking C shared library lib2dconv.so
-[ 50%] Built target 2dconv
+[ 71%] Built target 2dconv
 Scanning dependencies of target gaussian_kernel
-[ 75%] Building C object source/CMakeFiles/gaussian_kernel.dir/gaussian_kernel.c.o
+[ 85%] Building C object src/CMakeFiles/gaussian_kernel.dir/gaussian_kernel.c.o
 Linking C shared library libgaussian_kernel.so
-[ 75%] Built target gaussian_kernel
+[ 85%] Built target gaussian_kernel
 Scanning dependencies of target iio
-[100%] Building C object source/CMakeFiles/iio.dir/iio.c.o
-Linking C shared library libiio.so
+[100%] Building C object src/CMakeFiles/iio.dir/iio.c.o
+Linking C static library libiio.a
 [100%] Built target iio

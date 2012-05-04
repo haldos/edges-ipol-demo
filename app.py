@@ -51,14 +51,13 @@ class app(base_app):
         prog_file4 = self.bin_dir + "test_mh_log"
         log_file = self.base_dir + "build.log"
         # get the latest source archive
-    	build.download("http://iie.fing.edu.uy/~haldos/downloads/"
+        build.download("http://iie.fing.edu.uy/~haldos/downloads/"
                    	+ "edge_detectors_v0.1.tar.gz", tgz_file)
         # test if the dest file is missing, or too old
-        if (os.path.isfile(prog_file)
-            and ctime(tgz_file) < ctime(prog_file1)
-			and ctime(tgz_file) < ctime(prog_file2)
-			and ctime(tgz_file) < ctime(prog_file3)
-			and ctime(tgz_file) < ctime(prog_file4)):
+        if ( (os.path.isfile(prog_file1) and ctime(tgz_file) < ctime(prog_file1)) or
+             (os.path.isfile(prog_file2) and ctime(tgz_file) < ctime(prog_file2)) or
+             (os.path.isfile(prog_file3) and ctime(tgz_file) < ctime(prog_file3)) or
+             (os.path.isfile(prog_file4) and ctime(tgz_file) < ctime(prog_file4)) ):
             cherrypy.log("not rebuild needed",
                          context='BUILD', traceback=False)
         else:
@@ -72,7 +71,7 @@ class app(base_app):
                 shutil.rmtree(self.bin_dir)
             os.mkdir(self.bin_dir)
             shutil.copy(self.src_dir + "bin/test_fded" , prog_file1)
-            shutil.copy(self.src_dir + "bin/test_haralick" , prog_file4)
+            shutil.copy(self.src_dir + "bin/test_haralick" , prog_file2)
             shutil.copy(self.src_dir + "bin/test_mh" , prog_file3)
             shutil.copy(self.src_dir + "bin/test_mh_log" , prog_file4)
             # cleanup the source dir
@@ -87,30 +86,30 @@ class app(base_app):
         """
         # save and validate the parameters
         try:
-           self.cfg['param'] = {'th_fded' : float(th_fded)}
-           self.cfg['param'] = {'rho' : float(rho)}
-           self.cfg['param'] = {'sigma' : float(sigma)}
-           self.cfg['param'] = {'n' : int(n)}
-           self.cfg['param'] = {'tzc' : float(tzc)}
-           self.cfg['param'] = {'sigma2' : float(sigma2)}
-           self.cfg['param'] = {'n2' : int(n2)}
-           self.cfg['param'] = {'tzc2' : float(tzc2)}
+           #self.cfg['param'] = {'th_fded' : float(th_fded)}
+           #self.cfg['param'] = {'rho' : float(rho)}
+           #self.cfg['param'] = {'sigma' : float(sigma)}
+           #self.cfg['param'] = {'n' : int(n)}
+           #self.cfg['param'] = {'tzc' : float(tzc)}
+           #self.cfg['param'] = {'sigma2' : float(sigma2)}
+           #self.cfg['param'] = {'n2' : int(n2)}
+           #self.cfg['param'] = {'tzc2' : float(tzc2)}
            #self.cfg.save()
         #print("ENTER wait")
-		#print("kwargs = " + str(kwargs))
+        #print("kwargs = " + str(kwargs))
         # FDED
-#        self.cfg['param']['th_fded'] = kwargs['th_fded']
+		self.cfg['param']['th_fded'] = kwargs['th_fded']
         # HARALICK
-#        self.cfg['param']['rho'] = kwargs['rho']
+		self.cfg['param']['rho'] = kwargs['rho']
         # MARR-HILDRETH GAUSSIAN
-#        self.cfg['param']['sigma'] = kwargs['sigma']
-#        self.cfg['param']['n'] = kwargs['n']
-#        self.cfg['param']['tzc'] = kwargs['tzc']
+		self.cfg['param']['sigma'] = kwargs['sigma']
+		self.cfg['param']['n'] = kwargs['n']
+		self.cfg['param']['tzc'] = kwargs['tzc']
         # MARR-HILDRETH LOG
-#        self.cfg['param']['sigma2'] = kwargs['sigma2']
-#        self.cfg['param']['n2'] = kwargs['n2']
-#        self.cfg['param']['tzc2'] = kwargs['tzc2']		
-#        self.cfg.save()
+		self.cfg['param']['sigma2'] = kwargs['sigma2']
+		self.cfg['param']['n2'] = kwargs['n2']
+		self.cfg['param']['tzc2'] = kwargs['tzc2']		
+		self.cfg.save()
         except ValueError:
             return self.error(errcode='badparams',
                               errmsg="The parameter must be numeric.")
