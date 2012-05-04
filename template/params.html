@@ -1,0 +1,65 @@
+<%include file="header.html" />
+
+<p>
+  You can choose here the parameters for each algorithm: 
+	<ul>
+		<li> Roberts, Prewitt and Sobel: <i>th_fded</i> </li>
+		<li> Haralick: <i>rho</i> </li>
+		<li> Marr-Hildreth (Gaussian kernel): <i>sigma</i>, <i>n</i>, <i>tzc</i>
+		<li> Marr-Hildreth (LoG kernel): <i>sigma2</i>, <i>n2</i>, <i>tzc2</i> </li>
+	</ul>
+  Note: rgb images will be converted to grayscale.
+</p>
+
+<form action="${app.base_url + 'wait'}" method="get">
+  <div class="action">
+    Set the parameters and run the algorithm.<br />
+    <input type="hidden" name="key" value="${app.key}">
+	
+	Roberts, Prewitt and Sobel:
+	<label for="th_fded"><i>th_fded</i> = </label>
+    <input type="text" name="th_fded" value="3" size="4" />
+    <br />
+
+	Haralick:
+	<label for="rho"><i>&rho;</i> = </label>
+    <input type="text" name="rho" value="3" size="4" />
+    <br />
+
+	Marr-Hildreth (Gaussian kernel):
+    <label for="sigma"><i>&sigma;</i> = </label>
+    <input type="text" name="sigma" value="3" size="4" />
+    <br />
+
+    <label for="n"><i>n</i> = </label>
+    <input type="text" name="n" value="19" size="4" />
+    <br />
+
+    <label for="tzc"><i>tzc</i> = </label>
+    <input type="text" name="tzc" value="0.04" size="4" />
+    <br />
+
+	Marr-Hildreth (LoG kernel):
+    <label for="sigma2"><i>&sigma;2</i> = </label>
+    <input type="text" name="sigma2" value="3" size="4" />
+    <br />
+
+    <label for="n2"><i>n2</i> = </label>
+    <input type="text" name="n2" value="19" size="4" />
+    <br />
+
+    <label for="tzc2"><i>tzc2</i> = </label>
+    <input type="text" name="tzc2" value="0.04" size="4" />
+    <br />
+
+    <input type="submit" value="run" />
+  </div>
+</form>
+
+<hr />
+
+<div>
+  <img src="${app.work_url + 'input.png'}" alt="" /> 
+</div>
+
+<%include file="footer.html" />

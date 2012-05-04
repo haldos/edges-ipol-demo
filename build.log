@@ -1,0 +1,30 @@
+Wed, 21 Mar 2012 15:07:28 UYT : cd /home/haldo/Documentos/Investigacion/IPOL/ipol_demo_fast/app/xxx_edge_detectors/src/ && cmake . && make
+-- The C compiler identification is GNU
+-- The CXX compiler identification is GNU
+-- Check for working C compiler: /usr/bin/gcc
+-- Check for working C compiler: /usr/bin/gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/haldo/Documentos/Investigacion/IPOL/ipol_demo_fast/app/xxx_edge_detectors/src
+Scanning dependencies of target test_mh
+[ 25%] Building C object CMakeFiles/bin/test_mh.dir/source/test_mh.c.o
+Linking C executable bin/test_mh
+[ 25%] Built target bin/test_mh
+Scanning dependencies of target 2dconv
+[ 50%] Building C object source/CMakeFiles/2dconv.dir/2dconvolution.c.o
+Linking C shared library lib2dconv.so
+[ 50%] Built target 2dconv
+Scanning dependencies of target gaussian_kernel
+[ 75%] Building C object source/CMakeFiles/gaussian_kernel.dir/gaussian_kernel.c.o
+Linking C shared library libgaussian_kernel.so
+[ 75%] Built target gaussian_kernel
+Scanning dependencies of target iio
+[100%] Building C object source/CMakeFiles/iio.dir/iio.c.o
+Linking C shared library libiio.so
+[100%] Built target iio
