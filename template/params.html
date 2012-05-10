@@ -1,56 +1,69 @@
 <%include file="header.html" />
 
 <p>
-  You can choose here the parameters for each algorithm: 
+  You can choose here the parameters for each algorithm: <br>
 	<ul>
 		<li> Roberts, Prewitt and Sobel: <i>th_fded</i> </li>
 		<li> Haralick: <i>rho</i> </li>
 		<li> Marr-Hildreth (Gaussian kernel): <i>sigma</i>, <i>n</i>, <i>tzc</i>
 		<li> Marr-Hildreth (LoG kernel): <i>sigma2</i>, <i>n2</i>, <i>tzc2</i> </li>
 	</ul>
-  Note: rgb images will be converted to grayscale.
+<br/>
+  Note: rgb images will be converted to grayscale. <br>
 </p>
 
 <form action="${app.base_url + 'wait'}" method="get">
   <div class="action">
-    Set the parameters and run the algorithm.<br />
+    Set the parameters and run the algorithm.<br /></br>
     <input type="hidden" name="key" value="${app.key}">
 	
-	Roberts, Prewitt and Sobel: </br>
-	<label for="th_fded"><i>th_fded</i> = </label>
+	<strong>Roberts, Prewitt and Sobel:</strong></br>
+	<ul>
+	<li><label for="th_fded"><i>th_fded</i> = </label>
     <input type="text" name="th_fded" value="0.1" size="4" />
-    <br />
+    </li>
+	</ul>
+	</br>
 
-	Haralick: </br>
-	<label for="rho"><i>&rho;</i> = </label>
+	<strong>Haralick:</strong></br>
+	<ul>
+	<li><label for="rho"><i>&rho;</i> = </label>
     <input type="text" name="rho" value="0.5" size="4" />
-    <br />
+    </li>
+	</ul>
+	</br>
 
-	Marr-Hildreth (Gaussian kernel): </br>
-    <label for="sigma"><i>&sigma;</i> = </label>
+	<strong>Marr-Hildreth (Gaussian kernel):</strong></br>
+    <ul>
+	<li><label for="sigma"><i>&sigma;</i> = </label>
     <input type="text" name="sigma" value="2" size="4" />
-    <br />
+    </li>
 
-    <label for="n"><i>n</i> = </label>
+    <li><label for="n"><i>n</i> = </label>
     <input type="text" name="n" value="13" size="4" />
-    <br />
+    </li>
 
-    <label for="tzc"><i>tzc</i> = </label>
+    <li><label for="tzc"><i>tzc</i> = </label>
     <input type="text" name="tzc" value="0.1" size="4" />
-    <br />
+    </li>
+	</ul>
+	</br>
 
-	Marr-Hildreth (LoG kernel): </br>
-    <label for="sigma2"><i>&sigma;2</i> = </label>
+	<strong>Marr-Hildreth (LoG kernel):</strong></br>
+    <ul>
+	<li><label for="sigma2"><i>&sigma;2</i> = </label>
     <input type="text" name="sigma2" value="2" size="4" />
-    <br />
+    </li>
 
-    <label for="n2"><i>n2</i> = </label>
+    <li><label for="n2"><i>n2</i> = </label>
     <input type="text" name="n2" value="17" size="4" />
-    <br />
+    </li>
 
-    <label for="tzc2"><i>tzc2</i> = </label>
+    <li><label for="tzc2"><i>tzc2</i> = </label>
     <input type="text" name="tzc2" value="0.1" size="4" />
-    <br />
+    </li>
+	</ul>
+ </br>
 
     <input type="submit" value="run" />
   </div>
